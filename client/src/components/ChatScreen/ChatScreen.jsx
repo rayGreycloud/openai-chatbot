@@ -57,40 +57,33 @@ const ChatScreen = () => {
   return (
     <div className='h-main flex flex-col justify-between items-center'>
       <main className='w-full h-full overflow-y-auto flex flex-col max-w-4xl mx-auto px-2 sm:px-24 pt-2'>
-        <div className='flex items-center justify-center mb-2'>
-          <h1 className='text-center text-2xl md:text-3xl font-normal text-red'>
+        <div className='flex flex-col items-center justify-center mb-2'>
+          <h1 className='my-8 text-center text-2xl md:text-3xl font-normal text-red'>
             Chatbot
           </h1>
-          <div>
-            <label
-              htmlFor='prompt'
-              className='block text-sm font-medium leading-6 text-gray-900'
-            >
-              Prompt
-            </label>
-            <div className='mt-2'>
+          <div className='w-full'>
+            <div className='flex w-full'>
               <input
                 type='text'
                 name='prompt'
                 id='prompt'
                 value={prompt}
                 onChange={handlePromptChange}
-                className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                className='block w-full rounded-md border-0 pl-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                 aria-describedby='prompt-description'
               />
+              <button
+                type='button'
+                className='w-24 ml-4 rounded-md bg-indigo-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400'
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
             </div>
             <p className='mt-2 text-sm text-gray-500' id='prompt-description'>
               Enter a prompt for the chatbot
             </p>
           </div>
-
-          <button
-            type='button'
-            className='rounded-md bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20'
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
         </div>
 
         <ChatContainer messages={messages} />

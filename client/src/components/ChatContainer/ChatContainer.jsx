@@ -10,8 +10,8 @@ const ChatContainer = ({ messages }) => {
           return (
             <li key={idx} className='flex justify-between gap-x-6 py-5'>
               <div className='flex gap-x-4'>
-                <div className='text-sm font-semibold leading-6 text-white'>
-                  {message.role}
+                <div className='text-sm font-semibold leading-6 text-white uppercase'>
+                  {message.role}:&nbsp;
                 </div>
                 <div className='text-sm leading-6 text-white'>
                   {message.content}
