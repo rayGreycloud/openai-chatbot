@@ -10,10 +10,9 @@ const router = express.Router();
 // @access  Public
 router.post('/', async (req, res) => {
   try {
-    const messages = req.body.messages;
-    console.log('messages: ', messages);
+    const { messages, personality } = req.body;
 
-    const result = await getChatResponse(req.body.messages);
+    const result = await getChatResponse(messages, personality);
 
     if (!result.success) {
       return res.status(400).json(result);
