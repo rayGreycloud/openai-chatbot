@@ -7,18 +7,26 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const submitPrompt = async (messages) => {
+const submitPrompt = async (messages, personality) => {
   try {
-    console.log('Submit Prompt messages: ', messages);
     // if (!messages || messages.length === 0) {
     //   return null;
     // }
 
+    const temperature =
+      personality === 'sarcastic and cynical'
+        ? 1.3
+        : personality === 'depressed and pessimistic'
+        ? 1.4
+        : 0.7;
+
     const completion = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
-      messages: messages
+      messages: messages,
+      temperature,
+      maxTokens: 128
     });
-    console.log(completion.data.choices[0]);
+    // console.log(completion.data.choices[0]);
 
     if (
       !completion ||

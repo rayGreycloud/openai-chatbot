@@ -1,9 +1,8 @@
 const { submitPrompt } = require('../utils/chatbot');
 
-const getChatResponse = async (messages = 'messages') => {
+const getChatResponse = async (messages, personality) => {
   try {
-    console.log('messages: ', messages);
-    const response = await submitPrompt(messages);
+    const response = await submitPrompt(messages, personality);
 
     if (!response) {
       return {
