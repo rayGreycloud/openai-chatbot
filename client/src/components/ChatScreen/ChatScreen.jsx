@@ -92,9 +92,14 @@ const ChatScreen = () => {
     <div className='h-main flex flex-col justify-between items-center'>
       <main className='w-full h-full overflow-y-auto flex flex-col max-w-4xl mx-auto px-2 sm:px-24 pt-2'>
         <div className='my-2'>
-          <h1 className='my-8 text-2xl font-normal leading-7 text-white'>
-            OpenAI Chatbot
-          </h1>
+          <div className='flex items-center justify-between'>
+            <h1 className='my-8 text-2xl font-normal leading-7 text-white'>
+              Chat Persona
+            </h1>
+            <h1 className='my-8 text-2xl font-normal leading-7 text-white'>
+              OpenAI Chatbot
+            </h1>
+          </div>
           <div className='flex items-end justify-between mb-8'>
             <PersonalitySelector
               selectedPersonality={selected}
