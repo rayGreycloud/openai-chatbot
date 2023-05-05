@@ -24,7 +24,7 @@ const submitPrompt = async (messages, personality) => {
       model: 'gpt-3.5-turbo',
       messages: messages,
       temperature,
-      maxTokens: 128
+      max_tokens: 128
     });
     // console.log(completion.data.choices[0]);
 
