@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const pkgJSON = require('./package.json');
 console.log(`APP: ${pkgJSON.name} v${pkgJSON.version}`);
@@ -8,6 +9,7 @@ const app = express();
 
 // Init middleware
 app.use(express.json({ extended: false }));
+app.use(cors());
 
 // Define Routes
 // app.use('/api/auth', require('./routes/api/auth'));
