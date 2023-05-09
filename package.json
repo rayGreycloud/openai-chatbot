@@ -1,6 +1,6 @@
 {
   "name": "openai-chatbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "chatbot powered by OpenAI",
   "main": "server.js",
   "engines": {
